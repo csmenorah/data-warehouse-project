@@ -4,13 +4,13 @@
 
 
 
-Building a Data Warehouse using MS SQLSERVER (Data Engineering)
+Building a Data Warehouse (Data Engineering Project)
 
 
 
 ### Objective
 
-Develop a modern data warehouse using SQL Server to consolidate sales data, enabling analytical reporting and informed decision-making.
+To develop a modern data warehouse using SQL Server to consolidate sales data, enabling analytical reporting and informed decision-making.
 
 
 
