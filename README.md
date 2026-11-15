@@ -26,3 +26,22 @@ To develop a modern data warehouse using SQL Server to consolidate sales data, e
 
 • Documentation: Provide clear documentation of the data model to support both business stakeholders and analytics teams.
 
+---
+
+## 🏗️ Data Architecture
+
+The data warehouse follows the **Medallion Architecture** pattern, organizing data into **Bronze**, **Silver**, and **Gold** layers:
+
+![Data Warehouse Architecture](docs/Data%20Warehouse%20Project%20Layers-Architecture.drawio.png)
+
+1. **Bronze Layer (Raw Data)**: Stores raw data ingested directly from the source systems (ERP and CRM CSV files) into SQL Server tables via full-load batch processing (`TRUNCATE` & `INSERT`) without any transformations.
+2. **Silver Layer (Clean & Standardized Data)**: Cleanses, standardizes, normalizes, and enriches data from the Bronze layer using stored procedures to prepare it for analysis.
+3. **Gold Layer (Business-Ready Data)**: Integrates and aggregates cleansed data into analytical views modeled as a **Star Schema** (fact and dimension views) for BI & reporting, ad-hoc SQL queries, and machine learning.
+
+### Layer Breakdown & Specifications
+
+The diagram below outlines the definition, objectives, object types, load methods, transformations, data modeling, and target audience for each layer:
+
+![Data Warehouse Layers Layout](docs/Data%20Warehouse%20Project%20Layers-Layout.drawio.png)
+
+
