@@ -44,4 +44,10 @@ The diagram below outlines the definition, objectives, object types, load method
 
 ![Data Warehouse Layers Layout](docs/Data%20Warehouse%20Project%20Layers-Layout.drawio.png)
 
+### Tools Use
+1. SQLSERVER Docker "Image mcr.microsoft.com/mssql/server" 
+2. Notion for Project Management
+3. Draw.io for Project Architure Design
+4. GitHub for Code Repository
+5. VS Code for Database Workbench
 

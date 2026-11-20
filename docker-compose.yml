@@ -1,0 +1,51 @@
+services:
+  mssql:
+    image: mcr.microsoft.com/mssql/server:2025-latest
+    container_name: mssql-server
+    hostname: csmenorah
+    ports:
+      - "1433:1433"
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: "${SQL_PASSWORD}"
+      MSSQL_PID: "developer"
+    volumes:
+      - ./datasets:/var/opt/datasets
+      - mssql:/var/opt/mssql
+    restart: unless-stopped
+
+  postgres:
+    image: postgres:latest
+    container_name: postgres
+    hostname: csmenorah
+    environment:
+      POSTGRES_USER: csmenorah
+      POSTGRES_PASSWORD: "${SQL_PASSWORD}"
+      PGDATA: /var/lib/postgresql/18/docker
+      LANG: en_US.utf8
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres:/var/lib/postgresql
+      - ./datasets:/var/lib/postgresql/datasets
+    restart: unless-stopped
+
+
+  mysql:
+    image: mysql:latest
+    container_name: mysql
+    hostname: csmenorah
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: ${SQL_PASSWORD}
+    volumes:
+      - my-sql:/var/lib/mysql
+      - ./datasets:/var/lib/mysql-files/datasets
+    restart: no
+
+volumes:
+  mssql:
+  postgres:
+  my-sql:
+  mysql-data:
