@@ -1,0 +1,7 @@
+{
+    "dataworkspace.excludedProjects": [
+        "pile.sql/pile.sql.sqlproj",
+        "bronze_layer/DatabaseProjectDataWarehouse/DatabaseProjectDataWarehouse.sqlproj",
+        "Data_Warehouse_Project/Data_Warehouse_Project.sqlproj"
+    ]
+}

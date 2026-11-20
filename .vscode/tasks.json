@@ -1,0 +1,53 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "sqlproj: Build pile.sql",
+			"type": "process",
+			"command": "dotnet",
+			"args": [
+				"build",
+				"/home/csmenorah/projects/data-warehouse-project/pile.sql/pile.sql.sqlproj"
+			],
+			"problemMatcher": "$sqlproj-problem-matcher",
+			"isBackground": true,
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"detail": "Builds the pile.sql SQL project"
+		},
+		{
+			"label": "sqlproj: Build DatabaseProjectDataWarehouse",
+			"type": "process",
+			"command": "dotnet",
+			"args": [
+				"build",
+				"/home/csmenorah/projects/data-warehouse-project/bronze_layer/DatabaseProjectDataWarehouse/DatabaseProjectDataWarehouse.sqlproj"
+			],
+			"problemMatcher": "$sqlproj-problem-matcher",
+			"isBackground": true,
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"detail": "Builds the DatabaseProjectDataWarehouse SQL project"
+		},
+		{
+			"label": "sqlproj: Build Data_Warehouse_Project",
+			"type": "process",
+			"command": "dotnet",
+			"args": [
+				"build",
+				"/home/csmenorah/projects/data-warehouse-project/Data_Warehouse_Project/Data_Warehouse_Project.sqlproj"
+			],
+			"problemMatcher": "$sqlproj-problem-matcher",
+			"isBackground": true,
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"detail": "Builds the Data_Warehouse_Project SQL project"
+		}
+	]
+}
