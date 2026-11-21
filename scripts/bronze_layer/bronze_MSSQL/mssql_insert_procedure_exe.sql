@@ -1,3 +1,4 @@
+-- Active: 1795250156297@@127.0.0.1@1433@DataWarehouse@bronze
 -- Example call: populate a table-valued parameter with pairs, then run the loader.
 DECLARE @files bronze.load_file_list;
 INSERT INTO @files (tb_name, file_name)

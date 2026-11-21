@@ -11,7 +11,7 @@ services:
       MSSQL_PID: "developer"
     volumes:
       - ./datasets:/var/opt/datasets
-      - mssql:/var/opt/mssql
+      - mssqlserver:/var/opt/mssql
     restart: unless-stopped
 
   postgres:
@@ -26,7 +26,7 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - postgres:/var/lib/postgresql
+      - postgres-data:/var/lib/postgresql
       - ./datasets:/var/lib/postgresql/datasets
     restart: unless-stopped
 
@@ -44,8 +44,8 @@ services:
       - ./datasets:/var/lib/mysql-files/datasets
     restart: no
 
+
 volumes:
-  mssql:
-  postgres:
+  mssqlserver:
+  postgres-data:
   my-sql:
-  mysql-data:
